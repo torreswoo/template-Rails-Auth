@@ -27,9 +27,9 @@ class SessionsController < Devise::SessionsController
 
     session[:user_id]           = user.id
     session[:cn]                = user.username
-    session[:display_name]      = !params[:ldap_user].nil? ? '' : display_name
-    session[:name]              = !params[:ldap_user].nil? ? '' : name
-    session[:departmentNumber]  = !params[:ldap_user].nil? ? '' : departmentNumber
+    session[:display_name]      = ''
+    session[:name]              = ''
+    session[:departmentNumber]  = ''
 
     # for block hijacking
     cookies.signed[:secure_user_id] = {secure: true, value: "secure#{request.remote_ip}#{user.id}", :httponly => true}
