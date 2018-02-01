@@ -5,6 +5,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#################################
+gem 'devise'
+gem 'devise_ldap_authenticatable'
+gem 'net-ldap'
+gem 'omniauth', '>= 0.2.2'
+gem 'rolify'
+gem 'authority'
+#################################
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.6'

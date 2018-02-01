@@ -22,3 +22,56 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# gem
+- devise
+** devise_ldap_authenticatable
+** net-ldap
+** omniauth
+- rolify
+- authority
+``` 
+gem 'devise'
+gem 'devise_ldap_authenticatable'
+gem 'net-ldap'
+gem 'omniauth', '>= 0.2.2'
+gem 'rolify'
+gem 'authority'
+```
+
+# feature
+- Login : LDAP / DB Authenticate
+- Sign up
+- Role Management
+- Authority
+
+# command
+
+```
+$ rails new template-Rails-Auth
+$ bundle install
+$ rails db:migrate
+$ rails db:migrate:status
+$ rails db:rollback
+$ rails s
+$ rails c
+$ rails routes
+
+
+
+rails g devise:install
+rails g devise User
+  username! authencate_key
+  add_index :users, :username, unique: true
+  
+rails db:migrate
+  
+rails g devise:views
+rails g scaffold posts
+rails g devise_ldap_authenticatable:install
+  config/ldap.yml
+  config/initializers/devise.rb
+  
+rails g migration AddColumnUsers name:string department:string mobile:string department_number:string
+
+```
