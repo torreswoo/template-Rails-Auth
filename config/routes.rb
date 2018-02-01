@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  # devise_for :users
+
+  devise_for :users, skip: [ :sessions ]
+  devise_scope :user do
+    get 'login' => 'sessions#new', :as => :new_user_session
+    post 'login' => 'sessions#create', :as => :user_session
+    get 'logout' => 'sessions#destroy', :as => :destory_user_session
+  end
 end
