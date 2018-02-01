@@ -9,6 +9,10 @@ module ApplicationHelper
     end
   end
 
+  def is_dev_mode?
+    request.headers["X-Dev"] == 'on' ? true : false
+  end
+
   def page_bg(class_name = nil)
     return 'bg-development' if is_dev_mode?
     class_name.empty? ? "bg-gradient-9" : class_name

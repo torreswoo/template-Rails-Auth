@@ -1,0 +1,19 @@
+<%
+  header_style ||= 'bg-gradient-9'
+  title ||= 'Details <p class="header-sub">planet a/b entity details.</p>'
+  id ||= 'modal'
+  width ||= ''
+  modal_size ||= 'modal-lg'
+%>
+<div class="modal fade" id="<%= id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog <%= modal_size %>" role="document" <%= width %> >
+    <div class="modal-content">
+      <div class="modal-header <%= header_style %>">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h1 class="modal-title"><%= title.html_safe %></h1>
+      </div>
+      <div id="<%= id %>-body" class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>

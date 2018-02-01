@@ -8,6 +8,21 @@
   </head>
 
   <body>
-    <%= yield %>
+  <div id="page-header" class="<%= page_bg(yield(:page_bg)) %>">
+    <%= render 'layouts/header' %>
+  </div>
+
+  <div id="page-wrapper">
+    <div id="page-content-wrapper">
+      <div id="page-content">
+        <div class="container">
+          <%= yield %>
+        </div>
+      </div>
+      <%= render 'layouts/footer' %>
+    </div>
+  </div>
+
+  <%= render partial: 'shared/modal', locals: { title: 'Help <p class="header-sub">Ask anything.</p>', id: 'help', sel: 'help-content' } %>
   </body>
 </html>
