@@ -58,16 +58,16 @@ $ rails c
 $ rails routes
 
 
+# devies
+$ rails g devise:install
+$ rails g devise User
+$ rails db:migrate 
+$ rails g devise:views
 
-rails g devise:install
-rails g devise User
-  username! authencate_key
-  add_index :users, :username, unique: true
-  
-rails db:migrate
-  
-rails g devise:views
+# model
 rails g scaffold posts
+
+# LDAP
 rails g devise_ldap_authenticatable:install
   config/ldap.yml
   config/initializers/devise.rb
