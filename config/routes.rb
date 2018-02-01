@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  root to: "projects#index"
+
+  resources :projects
   # devise_for :users
 
   devise_for :users, skip: [ :sessions ]

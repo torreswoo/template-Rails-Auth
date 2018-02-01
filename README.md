@@ -65,7 +65,7 @@ $ rails db:migrate
 $ rails g devise:views
 
 # model
-rails g scaffold posts
+$ rails g scaffold projects
 
 # LDAP
 rails g devise_ldap_authenticatable:install
