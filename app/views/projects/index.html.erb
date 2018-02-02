@@ -2,19 +2,38 @@
 
 <h1>Projects</h1>
 
-<table>
+<table class="table project-index-table">
+  <colgroup>
+    <col width="25%" style="background: #fafafa" />
+    <col width="15%" />
+    <col width="15%" />
+    <col width="15%" />
+    <col width="15%" />
+    <col width="15%" />
+  </colgroup>
   <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th>Keyname (#id)</th>
+    <th class="center">Type</th>
+    <th class="center">Show</th>
+    <th class="center">Edit</th>
+    <th class="center">Delete</th>
+    <th class="center">Auth</th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @projects.each do |project| %>
+    <% @projects.each do |proj| %>
+    <% project = ProjectPresenter.new proj %>
       <tr>
+        <td><%= project.keyname%></td>
+        <td><%= project.ptype%></td>
         <td><%= link_to 'Show', project %></td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>
         <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="center actions">
+
+        </td>
       </tr>
     <% end %>
   </tbody>

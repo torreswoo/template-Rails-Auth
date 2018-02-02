@@ -1,3 +1,20 @@
-// Place all the styles related to the projects controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table.project-index-table {
+  tbody td {
+    line-height: 26px;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    .label {
+      font-size: 13px;
+    }
+  }
+  thead th.center, tbody td.center {
+    text-align: center
+  }
+
+  td.actions a {
+    font-size: 14px;
+  }
+}
