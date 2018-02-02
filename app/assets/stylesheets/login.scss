@@ -48,4 +48,16 @@
     color: #1f1f1f;
   }
 
+  .landing-image {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-top: 5px solid #95888c;
+    border-left: 5px solid #95888c;
+    border-right: 5px solid #95888c;
+    box-shadow: 0px 0px 9px 0px #888888;
+  }
 }

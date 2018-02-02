@@ -1,6 +1,27 @@
 # README
 
-# gem
+
+## feature
+- Login : LDAP / DB Authenticate
+- Sign up
+- Role Management
+- Authority
+
+![rails-intro-login](/docs/images/intro_login.png)
+
+
+## library
+
+| name | version  | download link |
+| --- | --- | --- |
+| devise | --- | --- |
+| rolify | --- | --- |
+| authority | --- | --- |
+| --- | --- | --- |
+| bootstrap-sass | --- | --- |
+| font-awesome-rails | --- | --- |
+
+## gem
 - devise
 ** devise_ldap_authenticatable
 ** net-ldap
@@ -16,13 +37,8 @@ gem 'rolify'
 gem 'authority'
 ```
 
-# feature
-- Login : LDAP / DB Authenticate
-- Sign up
-- Role Management
-- Authority
 
-# command
+## command
 
 ```
 $ rails new template-Rails-Auth
@@ -46,7 +62,7 @@ $ rails g scaffold projects
 
 ```
 
-# library
+## library
 - Bootstrap
 ```
 Gemfile
