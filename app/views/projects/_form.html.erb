@@ -1,4 +1,22 @@
 <%= form_for(project) do |f| %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <fieldset>
+        <h3>Project Keyname <strong>*</strong></h3>
+        <p><%= t('project.keyname_sub') %></p>
+        <%= f.text_field :keyname, class: 'form-control', autofocus: true, autocomplete: 'off', placeholder: 'android' %>
+      </fieldset>
+    </div>
+    <div class="col-md-6">
+      <fieldset>
+        <h3>Project Type <strong>*</strong></h3>
+        <p><%= t('project.ptype_sub') %></p>
+        <%= f.text_field :ptype, class: 'form-control', autocomplete: 'off', placeholder: 'Project Type' %>
+      </fieldset>
+    </div>
+  </div>
+
   <% if project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>

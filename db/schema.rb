@@ -13,8 +13,10 @@
 ActiveRecord::Schema.define(version: 20180201074524) do
 
   create_table "projects", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "keyname",    default: "", null: false
+    t.string   "ptype",      default: "", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "users", force: :cascade do |t|
