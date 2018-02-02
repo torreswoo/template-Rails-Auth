@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= render 'layouts/meta' %>
+  <%= render 'layouts/rails_default' %>
+  <%= render 'layouts/shim' %>
+  <%= stylesheet_link_tag 'login', media: 'all' %>
+</head>
+<body>
+<%= yield %>
+</body>
+</html>

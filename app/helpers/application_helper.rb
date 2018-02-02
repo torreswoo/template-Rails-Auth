@@ -15,7 +15,7 @@ module ApplicationHelper
 
   def page_bg(class_name = nil)
     return 'bg-development' if is_dev_mode?
-    class_name.empty? ? "bg-gradient-9" : class_name
+    class_name.empty? ? "bg-gradient-7" : class_name
   end
 
   def flash_message
