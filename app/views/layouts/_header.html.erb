@@ -1,0 +1,35 @@
+<div id="header-logo" class="logo-bg">
+  <%= link_to '<i class="fa fa-github-alt faa-shake animated"></i> Torres'.html_safe, root_path, class: 'logo-content' %>
+</div>
+<div class="collapse navbar-collapse">
+
+  <!--menu list-->
+  <ul id="topbar-menu" class="nav navbar-nav navbar-left">
+    <li>
+      <%= link_to "<i class=\"fa fa-sitemap\"></i> <span>PROJECT</span>".html_safe, projects_path %>
+    </li>
+  </ul>
+  <!--END menu list-->
+
+  <!--menu account user-->
+  <ul id="account-menu" class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+      <% if user_signed_in? %>
+        <a href="#" class="user-account dropdown-toggle" data-toggle="dropdown" >
+          <span class="name"><%= current_user.username %> / <%= current_user.email %></span>
+          <i class="fa fa-angle-down"></i>
+        </a>
+        <ul class="dropdown-menu" role="menu" style="width: 220px;">
+
+          <!--change password-->
+          <li><a href="/users/edit"><i class="fa fa-key" aria-hidden="true"></i> Edit User info</a></li>
+
+          <!--sign out-->
+          <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</a></li>
+
+        </ul>
+      <% end %>
+    </li>
+  </ul>
+  <!--END menu account user-->
+</div>

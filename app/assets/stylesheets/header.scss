@@ -1,0 +1,48 @@
+.logo-bg {
+  //background-color: rgba(255,255,255,.1);
+  color: #fff;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+
+ul#account-menu {
+  margin: 10px 0px;
+  list-style: none;
+
+  >li {
+    position: relative;
+    margin: 2px 0;
+
+    >a {
+      color: #fff;
+      padding: 0 10px 0 0;
+      border-radius: 3px;
+      font-size: 13px;
+      border: 1px solid transparent;
+      line-height: 35px;
+      height: 36px;
+
+      .fa {
+        width: 28px;
+        line-height: 29px;
+        height: 29px;
+        float: right;
+        text-align: center;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        margin-top: 4px;
+      }
+    }
+  }
+}
