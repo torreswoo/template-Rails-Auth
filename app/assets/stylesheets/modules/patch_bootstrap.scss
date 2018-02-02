@@ -1,0 +1,80 @@
+div.input-group-addon-for-select2 {
+  width: 0px !important;
+  padding: 0px;
+  border: none;
+}
+
+.alert-danger {
+  color: #fff;
+  border-color: #cf4436;
+  background: #e74c3c;
+}
+
+label {
+  font-weight: normal;
+}
+
+.tooltip-inner {
+  background-color: #03a591;
+  color: #fff;
+  font-size: 1.2em;
+  max-width: 250px;
+}
+
+.tooltip.top .tooltip-arrow {
+  border-top-color: #03a591;
+}
+
+.tooltip.right .tooltip-arrow {
+  border-right-color: #03a591;
+}
+
+.tooltip.bottom .tooltip-arrow {
+  border-bottom-color: #03a591;
+}
+
+.tooltip.left .tooltip-arrow {
+  border-left-color: #03a591;
+}
+.tooltip {
+  div.title {
+    text-decoration: none;
+    border-bottom: 2px dotted #9cc4e6;
+    padding-bottom: 3px;
+    margin-bottom: 3px;
+  }
+}
+.close {
+  font-size: 40px;
+}
+
+/* with gradient */
+.modal-header {
+  padding: 25px 10px;
+  color: #fff;
+
+  .header-sub {
+    color: #fff;
+    font-size: 12px;
+    opacity: .6;
+    -moz-opacity: .6;
+    filter: alpha(opacity=6);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=6)";
+  }
+}
+.modal-header .close {
+  margin-top: -2px;
+  margin-right: 10px;
+}
+button.close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  color: #000;
+}
+
+.text-danger {
+  color: #E44F38;
+}

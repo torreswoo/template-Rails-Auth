@@ -1,0 +1,146 @@
+.btn-primary, .label-primary {
+    border-color: #00a792;
+    color: #fff;
+    background: #00bca4;
+}
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary.disabled.active,
+.btn-primary.disabled:active,
+.btn-primary.disabled:focus,
+.btn-primary.disabled:hover,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover,
+.btn-primary[disabled],
+.btn-primary[disabled].active,
+.btn-primary[disabled]:active,
+.btn-primary[disabled]:focus,
+.btn-primary[disabled]:hover,
+.open .dropdown-toggle.btn-primary,
+.label-primary[href]:focus,
+.label-primary[href]:hover {
+  color: #fff;
+  border-color: #00b19b;
+  background-color: #00ceb4;
+}
+.badge-danger,
+.bg-danger,
+.bg-red,
+.bootstrap-switch-danger,
+.btn-danger,
+.checkbox-danger div[id^=uniform-] span.checked,
+.hover-danger:hover,
+.hover-red:hover,
+.label-danger,
+.progress-bar-danger,
+.radio-danger div[id^=uniform-] span.checked {
+    color: #fff;
+    border-color: #cf4436;
+    background: #e74c3c;
+}
+.btn-danger.active,
+.btn-danger.disabled,
+.btn-danger.disabled.active,
+.btn-danger.disabled:active,
+.btn-danger.disabled:focus,
+.btn-danger.disabled:hover,
+.btn-danger:active,
+.btn-danger:focus,
+.btn-danger:hover,
+.btn-danger[disabled],
+.btn-danger[disabled].active,
+.btn-danger[disabled]:active,
+.btn-danger[disabled]:focus,
+.btn-danger[disabled]:hover,
+.label-danger[href]:focus,
+.label-danger[href]:hover,
+.open .dropdown-toggle.btn-danger {
+    color: #fff;
+    border-color: #cf4436;
+    background: #eb6759;
+}
+.badge-success,
+.bg-green,
+.bootstrap-switch-success,
+.btn-success,
+.checkbox-success div[id^=uniform-] span.checked,
+.hover-green:hover,
+.hover-success:hover,
+.label-success,
+.progress-bar-success,
+.radio-success div[id^=uniform-] span.checked {
+    color: #fff;
+    border-color: #29b765;
+    background: #2ecc71;
+}
+.btn-success.active,
+.btn-success.disabled,
+.btn-success.disabled.active,
+.btn-success.disabled:active,
+.btn-success.disabled:focus,
+.btn-success.disabled:hover,
+.btn-success:active,
+.btn-success:focus,
+.btn-success:hover,
+.btn-success[disabled],
+.btn-success[disabled].active,
+.btn-success[disabled]:active,
+.btn-success[disabled]:focus,
+.btn-success[disabled]:hover,
+.label-success[href]:focus,
+.label-success[href]:hover,
+.open .dropdown-toggle.btn-success {
+    color: #fff;
+    border-color: #29b765;
+    background: #58d68d;
+}
+
+.badge-info, .bg-blue, .bootstrap-switch-info, .btn-info, .checkbox-info div[id^=uniform-] span.checked, .hover-blue:hover, .hover-info:hover, .label-info, .progress-bar-info, .radio-info div[id^=uniform-] span.checked {
+    color: #fff;
+    border-color: #308dcc;
+    background: #3498db;
+}
+
+.btn-info-ghost {
+  color: #3498db;
+  border-color: #308dcc;
+  background: #fff;
+
+  &:hover {
+    color: darken(#3498db, 10%);
+  }
+}
+.btn-primary-ghost {
+  border-color: #00a792;
+  color: #00bca4;
+  background: #fff;
+}
+
+
+/* for event */
+.btn-evt, .label-evt {
+    border-color: #c14b6f;
+    color: #fff;
+    background: #E55D87;
+}
+.btn-evt.active,
+.btn-evt.disabled,
+.btn-evt.disabled.active,
+.btn-evt.disabled:active,
+.btn-evt.disabled:focus,
+.btn-evt.disabled:hover,
+.btn-evt:active,
+.btn-evt:focus,
+.btn-evt:hover,
+.btn-evt[disabled],
+.btn-evt[disabled].active,
+.btn-evt[disabled]:active,
+.btn-evt[disabled]:focus,
+.btn-evt[disabled]:hover,
+.label-evt[href]:focus,
+.label-evt[href]:hover {
+  color: #fff;
+  border-color: #c14b6f;
+  background-color: #c14b6f;
+}

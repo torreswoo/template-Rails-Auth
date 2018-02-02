@@ -1,0 +1,11 @@
+@media print {
+  body {
+    background: #FFF;
+  }
+  a[href]:after {
+    content: none !important;
+  }
+  .btn, sub {
+    display: none;
+  }
+}

@@ -1,0 +1,34 @@
+.simple-checkbox input[type="checkbox"] {
+  display: none;
+}
+.simple-checkbox input[type="checkbox"]+label {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  cursor: pointer;
+  position: relative;
+  margin-right: 10px;
+  color: #666;
+  font-weight: normal;
+}
+.simple-checkbox input[type="checkbox"]:checked+label:before {
+  font-family: FontAwesome;
+  content: '\f00c';
+  color: #F73656;
+  text-align: center;
+  line-height: 15px;
+}
+.simple-checkbox input[type="checkbox"]+label:before {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  position: relative;
+  bottom: 2px;
+  content: "";
+  border: 1px solid #ccc;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}

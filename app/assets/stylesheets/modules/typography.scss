@@ -1,0 +1,66 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans Light', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 200;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+
+  p.header-sub {
+    display: inline;
+    font-size: 13px;
+    font-weight: 300;
+    opacity: .6;
+    -moz-opacity: .6;
+    filter: alpha(opacity=60);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  }
+}
+
+h2 {
+  font-size: 2.0em;
+  font-weight: 200;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+
+  p.header-sub {
+    color: #777;
+    margin: 5px 0;
+    font-size: 11px;
+  }
+}
+
+h3 {
+  font-size: 1.7em;
+  font-weight: 300;
+
+  strong {
+    color: #f93d21;
+  }
+}
+
+p {
+  line-height: 1.7em;
+}
+
+
+sub {
+  position: relative;
+  font-size: 0.9em;
+  cursor: help;
+
+  &:before {
+    content: "\f128";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+  }
+}
+
+blockquote {
+  font-size: 1em;
+}

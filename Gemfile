@@ -12,6 +12,8 @@ gem 'net-ldap'
 gem 'omniauth', '~> 1.3.2'
 gem 'rolify'
 gem 'authority'
+
+gem 'bootstrap-sass', '3.3.6'
 #################################
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

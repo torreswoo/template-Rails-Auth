@@ -1,0 +1,45 @@
+.example-box-wrapper .alert, .example-box-wrapper .content-box, .example-box-wrapper .dashboard-box, .example-box-wrapper .dataTables_wrapper, .example-box-wrapper .icon-box, .example-box-wrapper .image-box, .example-box-wrapper .jcrop-holder, .example-box-wrapper .jvectormap-container, .example-box-wrapper .list-group, .example-box-wrapper .loading-spinner, .example-box-wrapper .loading-stick, .example-box-wrapper .minicolors, .example-box-wrapper .nav, .example-box-wrapper .panel-layout, .example-box-wrapper .scrollable-content, .example-box-wrapper .tile-box, .example-box-wrapper .ui-accordion, .example-box-wrapper .ui-rangeSlider, .example-box-wrapper .ui-slider, .example-box-wrapper .ui-tabs, .example-box-wrapper>.btn, .example-box-wrapper>.btn-group, .example-box-wrapper>.btn-group-vertical, .example-box-wrapper>.btn-toolbar, .example-box-wrapper>.display-block.dropdown-menu, .example-box-wrapper>.dropdown, .example-box-wrapper>.dropup, .example-box-wrapper>.hasDatepicker, .example-box-wrapper>.img-humbnail, .example-box-wrapper>.minicolors, .example-box-wrapper>.pagination, .example-box-wrapper>.panel-layout, .example-box-wrapper>.progressbar, .example-box-wrapper>.thumbnail, .example-box-wrapper>form, .example-box-wrapper>h6, .example-box-wrapper>img {
+    margin-bottom: 20px;
+}
+
+.alert, .alert-icon, .bootstrap-timepicker-widget table td input, .bsdatepicker, .bsdatepicker td, .bsdatepicker td span, .bsdatepicker th, .btn, .button-pane, .chosen-choices, .chosen-choices li.search-choice, .chosen-container, .chosen-container-single .chosen-search input, .chosen-results li.highlighted, .chosen-single, .content-box, .content-box .ui-widget-overlay.loader, .content-box-closed, .content-box-closed .content-box-header, .dashboard-box, .daterangepicker, .daterangepicker .calendar-date, .daterangepicker .ranges li, .daterangepicker td, .daterangepicker th, .dropdown-menu, .dropdown-submenu.float-left>.dropdown-menu, .dropzone, .form-control, .form-input-icon .glyph-icon, .hero-btn, .icon-boxed, .image-box, .info-box, .info-box-alt, .input, .input-group-addon.addon-inside, .jGrowl-notification, .main-header .main-nav.nav-alt li.sf-mega-menu .sf-mega a, .main-header .main-nav.nav-alt li>ul li a, .main-nav ul li ul li a, .minicolors-panel, .ms-list li, .nav-list, .nav-list-horizontal-alt li a, .nav-tabs.nav-justified>li>a, .nav>li>a, .notifications-box, .pagination, .panel-box, .panel-content, .panel-group .panel, .panel-layout, .popover, .progressbar, .progressbar-value, .sb-slidebar .chat-box li a, .sb-slidebar .popover-title, .selector, .table-rounded, .tile-box, .tile-button, .todo-box li, .tooltip-inner, .ui-accordion, .ui-accordion-header, .ui-button, .ui-corner-all, .ui-datepicker, .ui-datepicker td a, .ui-datepicker td span, .ui-datepicker-buttonpane button, .ui-datepicker-next, .ui-datepicker-prev, .ui-dialog, .ui-dialog .ui-dialog-titlebar-close, .ui-dialog-buttonset button, .ui-dialog-titlebar-close, .ui-editRangeSlider-inputValue, .ui-menu li a, .ui-menu-item, .ui-rangeSlider-bar, .ui-rangeSlider-label, .ui-rangeSlider-noArrow .ui-rangeSlider-container, .ui-rangeSlider-withArrows .ui-rangeSlider-container, .ui-tabs, .ui-toolbar input, .ui-toolbar select, div.dataTables_filter input, div[id^=uniform-] span {
+    border-radius: 3px;
+}
+.bg-default, .bg-white.dashboard-box .button-pane, .bg-white.tile-box .tile-footer, .border-default, .bordered-row .form-group, .btn-default, .button-pane, .chosen-container, .chosen-container .chosen-drop, .chosen-container-active.chosen-with-drop .chosen-single div, .chosen-container-multi .chosen-choices li.search-choice, .chosen-container-single .chosen-single div, .content-box, .content-box-header.bg-default, .content-box-header.bg-gray, .content-box-header.bg-white, .dashboard-buttons .btn, .daterangepicker .calendar-date, .dropdown-menu, .email-body, .fc-state-default, .fc-widget-content, .fc-widget-header, .img-thumbnail, .jvectormap-label, .jvectormap-zoomin, .jvectormap-zoomout, .list-group-item, .mail-toolbar, .mailbox-wrapper .nav-list li a, .minicolors-panel, .ms-container .ms-list, .ms-container .ms-selectable li.ms-elem-selectable, .ms-container .ms-selection li.ms-elem-selection, .nav .open>a, .nav .open>a:focus, .nav .open>a:hover, .nav-tabs, .nav-tabs>li>a:focus, .nav-tabs>li>a:hover, .pagination>li>a, .pagination>li>span, .panel, .panel-box.bg-default, .panel-box.bg-gray, .panel-box.bg-white, .panel-content.bg-default, .panel-content.bg-gray, .panel-content.bg-white, .panel-footer, .panel-group .panel-footer+.panel-collapse .panel-body, .panel-group .panel-heading+.panel-collapse .panel-body, .panel-heading, .popover, .popover-title, .posts-list li, .selector i, .table-bordered, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th, .tabs-navigation>ul, .tabs-navigation>ul li.ui-state-hover>a, .tabs-navigation>ul li>a, .thumb-pane, .thumbnail, .timeline-box .tl-item .popover, .timeline-box:before, .ui-accordion .ui-accordion-header, .ui-datepicker, .ui-datepicker .ui-datepicker-buttonpane button, .ui-datepicker-buttonpane, .ui-dialog, .ui-dialog .ui-dialog-titlebar, .ui-dialog-buttonpane, .ui-menu, .ui-spinner .ui-spinner-button, .ui-tabs-nav, div.selector, div[id^=uniform-] span {
+    border-color: #dfe8f1;
+}
+.content-box, .content-box-header {
+    position: relative;
+    border-width: 1px;
+    border-style: solid;
+}
+.content-box {
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+.btn-group-vertical>.btn:first-child, .content-box .content-box-header, .list-group-item:first-child, .nav-list li:first-child a, .notifications-box li:first-child, .panel-heading, .panel>.list-group:first-child .list-group-item:first-child, .popover-title, .post-box textarea, .pricing-title, .tile-header, .ui-datepicker-header, .ui-datepicker-title, .ui-dialog .ui-dialog-titlebar, .ui-tabs-nav, .ui-tabs-nav li>a {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.content-box-header {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: -1px -1px 0;
+    padding: 15px;
+    border-color: transparent;
+}
+.content-box, .content-box-header {
+    position: relative;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.btn-group-vertical>.btn:last-of-type, .chosen-drop, .chosen-results li.no-results, .content-box .content-box-wrapper, .info-box, .main-nav ul li ul, .nav-list li:last-child a, .nav-tabs-bottom>li>a, .notifications-box li:last-child, .ui-datepicker-buttonpane, .ui-dialog .ui-dialog-buttonpane, .ui-menu {
+    border-bottom-right-radius: 3px!important;
+    border-bottom-left-radius: 3px!important;
+}
+.content-box .content-box-wrapper {
+    line-height: 1.6em;
+    padding: 15px;
+}

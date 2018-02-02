@@ -1,0 +1,142 @@
+$base-y: 590px;
+$swirl-complete-pos-y: calc(#{$base-y} - 30px);
+$bubble-bg: #A0B1AA;
+
+/* flash animation */
+#flask {
+  width: 60px;
+  height: 430px;
+  margin: 0 auto;
+  position: relative;
+}
+.bubble {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background: $bubble-bg;
+  opacity: 0.5;
+  position: absolute;
+  top: $base-y;
+}
+
+@keyframes bubble {
+  0% {
+    opacity: 0.6;
+    top: calc($base-y + 20px);
+  }
+  100% {
+    top: -20px;
+    opacity: 0;
+  }
+}
+@keyframes side {
+  0% {
+    margin-right: 0px;
+  }
+  100% {
+    margin-right: 20px;
+  }
+}
+
+
+
+.b1,.b2,.b3 {
+  right: 0px;
+  transform: scale(0.4);
+  opacity: 0.6;
+  animation: bubble 8s linear infinite, liquid-color 80s infinite, side 2s ease-in-out infinite alternate;
+}
+.b2 {
+  right: 10px;
+  transform: scale(0.5);
+  animation-delay: 2s,0s,2s;
+}
+.b3 {
+  right: 15px;
+  animation-delay: 5s,0s,5s;
+  animation: bubble 10s linear infinite, liquid-color 80s infinite, side 3s ease-in-out infinite alternate;
+}
+.b4,.b5 {
+  right: 10px;
+  transform: scale(0.5);
+  opacity: 0.8;
+  animation: bubble 16s linear infinite, liquid-color 80s infinite, side 5s ease-in-out infinite alternate;
+  animation-delay: 4s,0s,4s;
+}
+.b5 {
+  right: 0px;
+  animation-delay: 5s,0s,5s;
+}
+.b6,.b7,.b8 {
+  right: 10px;
+  transform: scale(0.6);
+  opacity: 0.4;
+  animation: bubble 14s linear infinite, liquid-color 80s infinite, side 3s ease-in-out infinite alternate;
+  animation-delay: 9s,0s,9s;
+}
+.b7 {
+  right: 10px;
+  transform: scale(0.7);
+  animation-delay: 3s,0s,3s;
+}
+.b8 {
+  right: 10px;
+  animation-delay: 7s,0s,7s;
+}
+.b9,.b0 {
+  right: 10px;
+  transform: scale(0.65);
+  opacity: 0.7;
+  animation: bubble 20s linear infinite, liquid-color 80s infinite, side 5s ease-in-out infinite alternate;
+}
+.b0 {
+  right: 5px;
+  animation-delay: 13s,0s,13s;
+}
+
+
+
+.swirl {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background: $bubble-bg;
+  opacity: 0.5;
+  position: absolute;
+  top: $base-y;
+  left: 30px;
+}
+
+
+@keyframes swirl {
+  0% {
+    top: $base-y;
+  }
+  100% {
+    top: $swirl-complete-pos-y;
+  }
+}
+
+
+
+.s0 {
+  animation: liquid-color 80s infinite, swirl 1s ease-in-out infinite alternate;
+}
+.s1 {
+  left: 30px;
+  transform: scale(1.2);
+  animation: liquid-color 80s infinite, swirl 2s ease-in-out infinite alternate;
+  animation-delay: 0s,2s;
+}
+.s2 {
+  left: 10px;
+  transform: scale(0.8);
+  animation: liquid-color 80s infinite, swirl 2s ease-in-out infinite alternate;
+  animation-delay: 0s,3s;
+}
+.s3 {
+  left: 30px;
+  transform: scale(1.4);
+  animation: liquid-color 80s infinite, swirl 1s ease-in-out infinite alternate;
+  animation-delay: 0s,5s;
+}

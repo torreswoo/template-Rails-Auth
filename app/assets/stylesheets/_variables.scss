@@ -1,0 +1,56 @@
+$sidebar-width: 60px;
+
+$entity-form-subscription-color: #999;
+
+@mixin form-layout() {
+  font-size: 14px;
+
+  fieldset {
+    margin-bottom: 20px;
+
+    p {
+      color: $entity-form-subscription-color;
+      font-size: 0.9em;
+    }
+  }
+
+  p {
+    strong {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 0.9em;
+      font-weight: 400;
+      color: #999;
+      width: 150px;
+      display: inline-block;
+    }
+    span {
+    }
+  }
+
+  div.actions {
+    text-align: right;
+    padding: 20px 0;
+    border: 0;
+    border-top: 1px solid #eeeeee;
+  }
+}
+
+@mixin table-tbody() {
+  tbody td {
+    line-height: 26px;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    .label {
+      font-size: 13px;
+    }
+  }
+  thead th.center, tbody td.center {
+    text-align: center
+  }
+
+  td.actions a {
+    font-size: 14px;
+  }
+}
