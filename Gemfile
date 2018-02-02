@@ -5,17 +5,20 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-#################################
+##################################################################
+### Auth & Role
 gem 'devise'
 gem 'devise_ldap_authenticatable'
-gem 'net-ldap'
+gem 'net-ldap',  '~> 0.16.0'
 gem 'omniauth', '~> 1.3.2'
 gem 'rolify'
 gem 'authority'
 
+### Bootstrap
 gem 'bootstrap-sass', '3.3.6'
 gem 'font-awesome-rails'
-#################################
+
+##################################################################
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.6'

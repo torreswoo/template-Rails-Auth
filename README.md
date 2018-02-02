@@ -1,28 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 # gem
 - devise
 ** devise_ldap_authenticatable
@@ -57,21 +34,26 @@ $ rails s
 $ rails c
 $ rails routes
 
-
 # devies
 $ rails g devise:install
 $ rails g devise User
 $ rails db:migrate 
 $ rails g devise:views
+$ rails g migration AddColumnUsers username:string
 
 # model
-$ rails g scaffold projects
+$ rails g scaffold projects  
 
-# LDAP
-rails g devise_ldap_authenticatable:install
-  config/ldap.yml
-  config/initializers/devise.rb
-  
-rails g migration AddColumnUsers name:string department:string mobile:string department_number:string
+```
 
+# library
+- Bootstrap
+```
+Gemfile
+  gem 'bootstrap-sass', '3.3.6'
+  gem 'font-awesome-rails'
+app/assets/javascript/application.js
+  //= require bootstrap-sprockets
+app/assets/stylesheets/application.css
+  *= require font-awesome
 ```
