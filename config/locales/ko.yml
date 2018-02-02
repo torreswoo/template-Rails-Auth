@@ -1,0 +1,13 @@
+ko:
+  will_paginate:
+    previous_label: "&#8592; Previous"
+    next_label: "More &#8594;"
+    page_gap: "&hellip;"
+  delete_confirm: "리소스를 삭제하시겠습니까?\n\n이 작업은 취소할 수 없습니다."
+  not_auth: 해당 리소스에 대한 권한이 없습니다. 관리자에게 문의하세요.
+  role: 해당 리소스에 대해 소유자가 속한 팀원 모두가 권한을 공유하게 됩니다. 추후 Role 단계는 개선될 것입니다.
+  nav:
+    to_experiment: Experiments 목록 페이지로 이동
+  project:
+    keyname_sub: 프로젝트의 키이름은 실험 데이터 API 와 밀접한 관련이 있습니다.
+    ptype_sub: 프로젝트 타입을 기입하세요.
