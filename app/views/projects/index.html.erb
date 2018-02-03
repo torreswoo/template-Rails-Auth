@@ -28,9 +28,11 @@
       <tr>
         <td><%= project.keyname%></td>
         <td><%= project.ptype%></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to icon('eye'), project_path(project), class: 'label label-info'%></td>
+        <td><%= link_to icon('edit'), edit_project_path(project), class: 'label label-info'%></td>
+        <td><%= link_to icon('trash-o', 'Delete'), project, method: :delete, data: { confirm: t('delete_confirm') },class: 'btn btn-danger actions-command-btn-item' %></td>
+
+        <td><%= link_to icon('users'), edit_project_path(project), class: 'label label-info'%></td>
         <td class="center actions">
 
         </td>
@@ -42,3 +44,4 @@
 <br>
 
 <%= link_to 'New Project', new_project_path %>
+
