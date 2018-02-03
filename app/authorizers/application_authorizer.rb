@@ -13,4 +13,9 @@ class ApplicationAuthorizer < Authority::Authorizer
     false
   end
 
+  private
+
+  def owner?(user, **opts)
+    user.has_role?(:owner, resource)
+  end
 end

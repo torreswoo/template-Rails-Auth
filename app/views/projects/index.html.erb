@@ -32,7 +32,7 @@
         <td><%= link_to icon('edit'), edit_project_path(project), class: 'label label-info'%></td>
         <td><%= link_to icon('trash-o', 'Delete'), project, method: :delete, data: { confirm: t('delete_confirm') },class: 'btn btn-danger actions-command-btn-item' %></td>
 
-        <td><%= link_to icon('users'), edit_project_path(project), class: 'label label-info'%></td>
+        <td><%= link_to icon('users'), project_permission_policy_path(project), class: 'label label-info'%></td>
         <td class="center actions">
 
         </td>

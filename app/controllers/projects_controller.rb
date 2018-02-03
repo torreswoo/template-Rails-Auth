@@ -1,31 +1,27 @@
 class ProjectsController < ApplicationController
 
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project_permission, only: [:permission_policy, :permission]
 
-  # GET /projects
-  # GET /projects.json
   def index
     @projects = Project.all
   end
 
-  # GET /projects/1
-  # GET /projects/1.json
   def show
   end
 
-  # GET /projects/new
   def new
     @project = Project.new
+    authorize_action_for @project
   end
 
-  # GET /projects/1/edit
   def edit
+    authorize_action_for @project
   end
 
-  # POST /projects
-  # POST /projects.json
   def create
     @project = Project.new(project_params)
+    authorize_action_for @project
 
     respond_to do |format|
       if @project.save
@@ -41,6 +37,8 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update
+    authorize_action_for @project
+
     respond_to do |format|
       if @project.update(project_params)
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
@@ -55,6 +53,8 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
+    authorize_action_for @project
+
     @project.destroy
     respond_to do |format|
       format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
@@ -62,14 +62,27 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def permission_policy
+
+    pp @project
+    authorize_action_for @project
+    @users = User.find_by(username: session[:username])
+
+
+  end
+
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_project
       @project = Project.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
       params.require(:project).permit(:ptype, :keyname)
     end
+
+    def set_project_permission
+      @project = Project.find(params[:project_id])
+    end
+
 end
