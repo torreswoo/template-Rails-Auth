@@ -28,7 +28,7 @@
       <tr>
         <td><%= project.keyname%></td>
         <td><%= project.ptype%></td>
-        <td><%= link_to icon('eye'), project_path(project), class: 'label label-info'%></td>
+        <td><%= link_to icon('eye'), project_path(project), class: 'label label-info', data: { toggle: 'modal', target: '#modal' }, remote: true%></td>
         <td><%= link_to icon('edit'), edit_project_path(project), class: 'label label-info'%></td>
         <td><%= link_to icon('trash-o', 'Delete'), project, method: :delete, data: { confirm: t('delete_confirm') },class: 'btn btn-danger actions-command-btn-item' %></td>
 
@@ -45,3 +45,14 @@
 
 <%= link_to 'New Project', new_project_path %>
 
+
+<!-- Modal -->
+<%= render partial: 'shared/modal', locals: {
+  header_style: 'bg-gradient-3'
+} %>
+
+<%= render partial: 'shared/modal', locals: {
+  id: 'audits',
+  header_style: 'bg-gradient-3',
+  width: 'style=width:85%'
+} %>
