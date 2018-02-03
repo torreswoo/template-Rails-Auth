@@ -64,10 +64,8 @@ class ProjectsController < ApplicationController
 
   def permission_policy
 
-    pp @project
     authorize_action_for @project
-    @users = User.find_by(username: session[:username])
-
+    @users = User.at_who session[:username]
 
   end
 

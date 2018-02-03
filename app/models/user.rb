@@ -1,8 +1,7 @@
 class User < ApplicationRecord
 
   # devise
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
   # rolify
   rolify
@@ -26,6 +25,17 @@ class User < ApplicationRecord
 
   def has_role_project_owner?(project)
     has_role?(:owner, project)
+  end
+
+  def self.at_who dnum = nil
+
+    all.order("username = '#{dnum}' DESC").each_with_object([]) do |item, ary|
+      next if item.username.nil?
+      text = "#{item.username} / #{item.name} / #{item.email}"
+      val = "#{item.username}"
+
+      ary << [text, val]
+    end
   end
 
 end

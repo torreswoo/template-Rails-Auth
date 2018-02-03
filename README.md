@@ -93,3 +93,5 @@ app/assets/javascript/application.js
 app/assets/stylesheets/application.css
   *= require font-awesome
 ```
+- mustache.js
+- select2.js

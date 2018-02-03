@@ -1,0 +1,292 @@
+<% provide(:title, "#{@project.keyname} > Permission Policy".html_safe) %>
+
+<%= flash_message %>
+
+<%= stylesheet_link_tag "permission_policy" %>
+<%= javascript_include_tag "permission_policy"%>
+<%= javascript_include_tag "lib/mustache"%>
+
+<h1>
+  <span>
+    <%= link_to "<span class='result-header-project'>#{@project.keyname}</span>".html_safe,
+                root_path,
+                data: {toggle: 'tooltip', placement: 'right', title: t('nav.to_experiment')}%>
+  </span>
+  User Role Policy in the Project
+
+</h1>
+<p>각 프로젝트에서 사용자의 Role을 설정함으로써 실험의 생성, 수정 권한을 부여할 수 있습니다</p>
+
+
+<div class="access-component">
+
+  <div>
+    <h3>Public Access</h3>
+    <p>모든 사용자가 프로젝트에 있는 모든 실험 정보를 볼 수 있습니다.</p>
+  </div>
+
+  <div>
+    <h3>User Access - User Role</h3>
+    <p>
+      해당 프로젝트에서 실험의 생성, 수정을 Role을 부여함으로써, 사용자 별로 통제할 수 있습니다<br>
+      User Role - Guest / Owner / Admin
+    </p>
+
+    <table class="table table-striped table-user-role-policy">
+      <colgroup>
+        <col width="20%"  />
+        <col width="20%"  />
+        <col width="15%" />
+        <col width="15%" />
+        <col width="15%" />
+        <col width="15%" />
+      </colgroup>
+      <thead>
+      <tr style=" text-align: center">
+        <th></th>
+        <th></th>
+        <th>Guest
+          <i class="fa fa-question" aria-hidden="true"
+             data-toggle="tooltip" title="Default User Role"></i>
+          <br>
+          <span class="detail-small">(Default - No Role)</span>
+        </th>
+        <th>Owner
+          <i class="fa fa-question" aria-hidden="true"
+             data-toggle="tooltip" title="Make someone a Project Owner if that person will have ultimate control over the experiments within a particular project. Since this role can start and stop experiments within a project, this person has a high level of ownership. If that's not the case, then use Editors."></i>
+        </th>
+        <th>Admin
+          <i class="fa fa-question" aria-hidden="true"
+             data-toggle="tooltip" title="Control all project & experiment. You can't be Admin. if you really need to get the Admin role. contact us."></i>
+          <br>
+          <span class="detail-small">(Only for Administrators)</span>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">View All Experiment's Results</th>
+        <th><span class="detail-small">실험 진행 상황 및 결과를 확인 할 수 있다.</span></th>
+        <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">View Variation's detail</th>
+        <th><span class="detail-small">실험 포함됨 Variation정보를 확인 할 수 있다.</span></th>
+        <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">Create New Experiment</th>
+        <th><span class="detail-small"><span>새로운 실험을 생성</span>할 수 있다.</span></th>
+        <td></td>
+        <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+        <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">Edit Own Experiment</th>
+        <th><span class="detail-small"><span class="detail-strong">자신이 만든 실험을 수정(start/stop/winner)</span>할 수 있다.</span></th>
+        <td></td>
+        <td></td>
+        <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <th scope="row">Edit All Experiment</th>
+        <th><span class="detail-small"><span class="detail-strong">모든 실험의 정보를 수정(start/stop/winner)</span>할 수 있다.</span></th>
+        <td></td>
+        <td></td>
+        <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+      </tr>
+      </tbody>
+    </table>
+    <hr>
+
+    <!--user-access component-->
+    <h3>Choose User & Role</h3>
+    <p>User를 선택하고 알맞은 Role을 부여하세요.</p>
+    <div class="user-access-component">
+      <!--input component-->
+      <div name="user-access-input" class="user-access-input">
+
+        <%= select_tag "input-username" \
+        , options_for_select(@users) \
+        , {:class => "form-control input-username"}
+        %>
+        <script>
+          $('#input-username').select2({
+            tags: true,   // 이름;전화번호 를 바로 입력할 수 있어야 한다.
+            placeholder: {
+              id: '-1', // the value of the option
+              text: 'Select users'
+            }
+          });
+        </script>
+
+        <select name="input-role" class="input-role">
+          <option value="ROLE_NULL" selected>.. choose role</option>
+          <!--<option value="ROLE_ADMIN"> Admin</option>-->
+          <option value="ROLE_OWNER"> Owner</option>
+          <option value="ROLE_PLANNER"> Planner</option>
+        </select>
+
+        <button id='input-add-btn' name="input-add-btn" type="button" class="btn btn-info input-add-btn"> <!--disabled-->
+          <i class="fa fa-plus-circle" aria-hidden="true"></i>
+          ADD
+        </button>
+
+      </div>
+
+      <!--list component-->
+      <!--list component - title header-->
+      <div class="user-access-list">
+        <div class="user-access-header">
+
+          <div class="item-field-name">
+            <strong>User Name</strong>
+          </div>
+
+          <div class="item-field-role">
+            <strong>Role</strong>
+          </div>
+
+          <div class="item-field-permission">
+            <div class="item-field-permission-field">
+              <div class="check-permission">Delete
+                <i class="fa fa-question" aria-hidden="true"
+                   data-toggle="tooltip" title="Delete permission: able to delete experiment in this project"></i>
+              </div>
+            </div>
+            <div class="item-field-permission-field">
+              <div class="check-permission">Update
+                <i class="fa fa-question" aria-hidden="true"
+                   data-toggle="tooltip" title="Update permission: able to update experiment's details"></i>
+              </div>
+            </div>
+            <div class="item-field-permission-field">
+              <div class="check-permission">Create
+                <i class="fa fa-question" aria-hidden="true"
+                   data-toggle="tooltip" title="Create permission: able to make a new experiment"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="item-btn-remove">
+          </div>
+        </div>
+      </div>
+      <!--list component - title header END-->
+
+      <!--list component - item list -->
+      <div id="user-access-list" class="user-access-list">
+
+        <% if !Role.find_by(resource_type:'Project', resource_id:@project.id).nil? %>
+          <%
+            # users_admin = !Role.find_by(name:'admin').nil? ? Role.find_by(name:'admin').users : []
+            users_owner = !Role.find_by(resource_type:'Project', resource_id:@project.id, name:'owner').nil? ? Role.find_by(resource_type:'Project', resource_id:@project.id, name:'owner').users : []
+
+
+            users = ( users_owner ).uniq
+            if !users.nil?
+              users.each do | user |
+                role = nil
+                role = user.has_role_project_owner?(@project) ? 'Owner' : role
+                role = user.has_role_admin? ? 'Admin' : role
+
+                icon = case role
+                  when 'Admin' then 'fa-users'
+                  when 'Owner' then 'fa-user-circle'
+                  else ''
+                 end
+%>
+              <!--item-->
+              <div id="user-access-item-<%= user.username %>"
+                   name="user-access-item"
+                   class="user-access-item <%= (role == 'Admin') ? 'user-access-admin' :'' %>"
+                   data-role="<%= role %>"
+                   data-username="<%= user.username %>"
+                   data-user-name="<%= user.name %>"
+                   data-user-department="<%= user.department %>">
+
+                <div class="item-field-name"> <%= user.name %> / <%= user.department %></div>
+
+                <div class="item-field-role">
+                  <i class="fa <%= icon %>" aria-hidden="true"></i>
+                  <%= role %>
+                </div>
+
+                <div class="item-field-permission">
+                  <div class="item-field-permission-field">
+                    <%= (%w{Admin }.include? role) ? '<i class="fa fa-check-circle-o" aria-hidden="true"></i>'.html_safe: ''%>
+                  </div>
+                  <div class="item-field-permission-field">
+                    <%= (%w{Admin Owner }.include? role) ? '<i class="fa fa-check-circle-o" aria-hidden="true"></i>'.html_safe: ''%>
+                  </div>
+                </div>
+
+                <% if !%w{Admin }.include? role %>
+                  <div name="item-btn-remove" class="item-btn-remove">
+                    <i class="fa fa-times"></i>
+                  </div>
+                <% end %>
+              </div>
+              <!--item END-->
+            <% end %>
+          <% end %>
+        <% end %>
+
+      </div>
+      <!--list component - item list END-->
+    </div>
+  </div>
+
+
+  <div class="actions actions-command-btn">
+    <div class="pull-left">
+
+    </div>
+
+    <div class="actions-command-btn-container">
+
+
+    </div>
+  </div>
+
+</div>
+
+<!--template-->
+<script id="template-user-access-item" type="text/html">
+  <div id="user-access-item-{{username}}" name="user-access-item" class="user-access-item" data-username="{{username}}" data-role="{{role}}" data-user-name="{{user_name}}" data-user-department="{{user_department}}">
+
+    <div class="item-field-name"> {{user_name}} / {{user_department}}</div>
+
+    <div class="item-field-role">
+      <i class="fa {{icon}}" aria-hidden="true"></i>
+      {{role}}
+    </div>
+
+    <div class="item-field-permission">
+      <div class="item-field-permission-field">
+        <i class="fa {{icon_delete_permission}}" aria-hidden="true"></i>
+      </div>
+      <div class="item-field-permission-field">
+        <i class="fa {{icon_update_permission}}" aria-hidden="true"></i>
+      </div>
+      <div class="item-field-permission-field">
+        <i class="fa {{icon_create_permission}}" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <div name="item-btn-remove" class="item-btn-remove">
+      <i class="fa fa-times"></i>
+    </div>
+
+  </div>
+</script>
+<!--END template-->
+
+<!--js-->
+<script>
+
+</script>

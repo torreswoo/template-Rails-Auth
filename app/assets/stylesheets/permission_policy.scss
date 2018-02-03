@@ -1,0 +1,144 @@
+
+div.user-access-input{
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 85%;
+  border-bottom: 1px solid #0f2c622e;
+  border-top: 1px solid #0f2c622e;
+  background-color: #66666612;
+
+  .input-username{
+    width: 60%;
+    height: 35px;
+  }
+  .input-role{
+    //float: right;
+    height: 35px;
+    font-size: 15px;
+    margin-right: 20px;
+
+  }
+  .input-add-btn{
+    float: right;
+    height: 35px;
+    width: 70px;
+  }
+
+}
+
+
+div.access-component {
+
+  padding-left: 30px;
+  margin-bottom: 90px;
+
+  div.user-access-component {
+
+    div.user-access-list{
+      font-size: 15px;
+      margin-top: 20px;
+      width: 85%;
+
+      .user-access-header {
+        position: relative;
+        margin: 5px 50px 10px;
+        color: #0e2e42;
+        //color: white;
+      }
+
+      .user-access-item {
+        position: relative;
+        margin: 5px 50px;
+        height: 30px;
+        border-bottom: 1px solid #0f2c6275;
+        padding-left: 5px;
+        padding-top: 5px;
+
+        &:hover{
+          background-color: #00bfff;
+          color: white;
+          opacity: 1;
+        }
+      }
+      .user-access-admin{
+        opacity: 0.5;
+      }
+    }
+
+
+
+    .item-field-icon {
+      display: inline-block;
+      width: 3%;
+      color: #0f2c62;
+    }
+
+    .item-field-name {
+      display: inline-block;
+      width: 30%;
+      height: 17px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space:nowrap;
+      //position: absolute;
+      //margin-left: 20px;
+      //width: 230px;
+      //overflow: hidden;
+    }
+    .item-field-role {
+      display: inline-block;
+      width: 15%;
+      text-align: center
+    }
+    .item-field-permission {
+      display: inline-block;
+      width: 40%;
+      text-align: center;
+      margin-left: 25px;
+      .item-field-permission-field {
+
+        display: inline-block;
+        width: 30%;
+        .check-permission {
+          text-align: center;
+        }
+      }
+
+    }
+    .item-btn-remove {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      cursor: pointer;
+
+      vertical-align: center;
+      &:hover {
+        color: #C84633
+      }
+    }
+  }
+}
+
+table.table-user-role-policy{
+
+
+  width: 80%;
+  margin-left: 20px;
+
+  thead > tr > th{
+    text-align: center;
+  }
+
+  span.detail-small{
+    font-size: 10px;
+  }
+  span.detail-strong{
+    color: lightslategrey;
+  }
+  td{
+    text-align: center;
+  }
+
+}
