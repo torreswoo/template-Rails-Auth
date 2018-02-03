@@ -40,6 +40,7 @@ gem 'authority'
 
 ## command
 
+- set basic project
 ```
 $ rails new template-Rails-Auth
 $ bundle install
@@ -50,15 +51,34 @@ $ rails s
 $ rails c
 $ rails routes
 
-# devies
+```
+
+- devise : set the login & auth
+```
+## devise
 $ rails g devise:install
 $ rails g devise User
 $ rails db:migrate 
 $ rails g devise:views
 $ rails g migration AddColumnUsers username:string
 
-# model
+## model
 $ rails g scaffold projects  
+```
+
+- rolify
+```
+## role
+$ rails g rolify Role
+
+## Auth
+$ rails g authority:install 
+
+## usage
+$ user = User.find_by(username:'1001')
+$ user.roles.pluck(:name, :resource_type, :resource_id)
+$ user.add_role :admin
+$ user.add_role :owner, Project.find(1)
 
 ```
 
