@@ -11,3 +11,6 @@ ko:
   project:
     keyname_sub: 프로젝트의 키이름은 실험 데이터 API 와 밀접한 관련이 있습니다.
     ptype_sub: 프로젝트 타입을 기입하세요.
+  post:
+    keyname_sub: 포스트의 키이름
+    description_sub: 포스트의 description

@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   resources :projects do |project|
     get :permission_policy
 
+    resources :posts do |post|
+      member do
+
+      end
+    end
+
   end
 
 end
