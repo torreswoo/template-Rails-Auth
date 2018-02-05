@@ -36,7 +36,7 @@ gem 'omniauth', '>= 0.2.2'
 gem 'rolify'
 gem 'authority'
 ```
-
+- nested_form
 
 ## command
 
@@ -79,8 +79,17 @@ $ user = User.find_by(username:'1001')
 $ user.roles.pluck(:name, :resource_type, :resource_id)
 $ user.add_role :admin
 $ user.add_role :owner, Project.find(1)
+```
+
+- 1:N relation
+- use "nested_form"
+```
+## model
+$ rails g scaffold projects
+$ rails g scaffold posts  
 
 ```
+
 
 ## library
 - Bootstrap
