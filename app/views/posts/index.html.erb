@@ -2,6 +2,13 @@
 
 <h1>Posts</h1>
 
+<div class="pull-right">
+  <%= link_to_if Post.creatable_by?(current_user, @project),
+                 icon('plus', '<strong>Create Post</strong>'),
+                 new_project_post_path(@project),
+                 class: 'btn btn-primary' do end %>
+</div>
+
 <table>
   <thead>
     <tr>
@@ -22,4 +29,3 @@
 
 <br>
 
-<%= link_to 'New Post', new_project_post_path %>

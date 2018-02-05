@@ -2,6 +2,13 @@
 
 <h1>Projects</h1>
 
+<div class="pull-right">
+  <%= link_to_if Project.creatable_by?(current_user),
+                 icon('plus', '<strong>Create Post</strong>'),
+                 new_project_path,
+                 class: 'btn btn-primary' do end %>
+</div>
+
 <table class="table project-index-table">
   <colgroup>
     <col width="20%" style="background: #fafafa" />
@@ -28,7 +35,14 @@
     <% @projects.each do |proj| %>
     <% project = ProjectPresenter.new proj %>
       <tr>
-        <td><%= project.keyname%></td>
+        <!--keyname info-->
+        <td>
+          <%= link_to project.keyname,
+                      project_posts_path(project),
+                      class: 'project-keyname',
+                      data: { toggle: 'tooltip', placement: 'right' },
+                      title: "Post list 페이지로 이동" %>
+        </td>
         <td><%= project.ptype%></td>
         <td><%= project.owner_fmt%></td>
         <td><%= link_to icon('eye'), project_path(project), class: 'label label-info', data: { toggle: 'modal', target: '#modal' }, remote: true%></td>
