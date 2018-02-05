@@ -30,6 +30,10 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+
+        # add owner
+        current_user.add_role(:owner, @experiment)
+
         format.html { redirect_to project_post_path(@project, @post), notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else

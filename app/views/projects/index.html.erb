@@ -4,8 +4,9 @@
 
 <table class="table project-index-table">
   <colgroup>
-    <col width="25%" style="background: #fafafa" />
-    <col width="15%" />
+    <col width="20%" style="background: #fafafa" />
+    <col width="10%" />
+    <col width="10%" />
     <col width="15%" />
     <col width="15%" />
     <col width="15%" />
@@ -15,6 +16,7 @@
   <tr>
     <th>Keyname (#id)</th>
     <th class="center">Type</th>
+    <th class="center">Owner</th>
     <th class="center">Show</th>
     <th class="center">Edit</th>
     <th class="center">Delete</th>
@@ -28,6 +30,7 @@
       <tr>
         <td><%= project.keyname%></td>
         <td><%= project.ptype%></td>
+        <td><%= project.owner_fmt%></td>
         <td><%= link_to icon('eye'), project_path(project), class: 'label label-info', data: { toggle: 'modal', target: '#modal' }, remote: true%></td>
         <td><%= link_to icon('edit'), edit_project_path(project), class: 'label label-info'%></td>
         <td><%= link_to icon('trash-o', 'Delete'), project, method: :delete, data: { confirm: t('delete_confirm') },class: 'btn btn-danger actions-command-btn-item' %></td>
