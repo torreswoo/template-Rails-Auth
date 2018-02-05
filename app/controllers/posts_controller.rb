@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to project_post_path(@project, @post), notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -74,6 +74,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:keyname, :description)
+      params.require(:post).permit(:keyname, :description, :project_id)
     end
 end

@@ -1,5 +1,7 @@
 <%= nested_form_for([@project, post], html: { class: 'experiment-container' }) do |f| %>
 
+  <%= f.hidden_field :project_id, value: @project.id %>
+
   <div class="row">
     <div class="col-md-6">
       <fieldset>
