@@ -75,12 +75,11 @@ class ProjectsController < ApplicationController
       @project = Project.find(params[:id])
     end
 
-    def project_params
-      params.require(:project).permit(:ptype, :keyname)
-    end
-
     def set_project_permission
       @project = Project.find(params[:project_id])
     end
 
+    def project_params
+      params.require(:project).permit(:ptype, :keyname)
+    end
 end

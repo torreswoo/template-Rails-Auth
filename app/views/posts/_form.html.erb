@@ -1,0 +1,35 @@
+<%= nested_form_for([@project, post], html: { class: 'experiment-container' }) do |f| %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <fieldset>
+        <h3>Post Keyname <strong>*</strong></h3>
+        <p><%= t('post.keyname_sub') %></p>
+        <%= f.text_field :keyname, class: 'form-control', autofocus: true, autocomplete: 'off', placeholder: 'post#1' %>
+      </fieldset>
+    </div>
+    <div class="col-md-6">
+      <fieldset>
+        <h3>Post description <strong>*</strong></h3>
+        <p><%= t('post.description_sub') %></p>
+        <%= f.text_field :description, class: 'form-control', autocomplete: 'off', placeholder: 'description' %>
+      </fieldset>
+    </div>
+  </div>
+
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
