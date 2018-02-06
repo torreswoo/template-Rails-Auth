@@ -13,4 +13,7 @@ class Project < ApplicationRecord
   validates :keyname, presence: true, length: {minimum: 5}, uniqueness: true
   validates :ptype, presence: true
 
+  # audit
+  audited
+
 end
