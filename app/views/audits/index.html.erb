@@ -1,0 +1,79 @@
+<% provide(:title, "Audit Log") %>
+<% provide(:page_bg, "bg-gradient-3") %>
+<%= flash_message %>
+
+<h1>Audit log</h1>
+<hr class="style-one" />
+
+<% auditable_types = [
+  "Project",
+  "Post"
+] %>
+
+<!-- search & paging -->
+<%= form_tag audits_path, :method => 'get', :class => 'form-search' do %>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="input-group">
+        <%= select_tag "auditable_type", options_for_select(auditable_types, params[:auditable_type]), { :prompt => "=== Menu Type ===", :class => "filter form-control"} %>
+        <span class="input-group-btn">
+          <%= submit_tag "Filter", :name => nil, :class => 'btn btn-info btn-for-select2' %>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 10px">
+    <div class="col-md-4">
+      <div class="input-group">
+        <%= select_tag "f_field", options_for_select([["Details", "audited_changes"]], selected: params[:f_field]), class: 'form-control' %>
+        <div class="input-group-addon input-group-addon-for-select2"></div>
+        <%= text_field_tag :search, params[:search], :class => 'form-control', :accesskey => 's' %>
+        <span class="input-group-btn">
+          <%= submit_tag "Search", :name => nil, :class => 'btn btn-info' %>
+        </span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <%= will_paginate @audits, :class => 'digg_pagination', :page_links => false %>
+    </div>
+  </div>
+<% end %>
+
+<br>
+<!-- index. the list of metrics -->
+<table class="table table-condensed table-hover table-striped">
+  <colgroup>
+    <col width="3%" />
+    <col width="17%" />
+    <col width="18%" />
+    <col width="*%" />
+    <col width="14%" />
+  </colgroup>
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>User</th>
+    <th>Action(version) : Resource(id)</th>
+    <th>Details ( field )</th>
+    <th>Time</th>
+  <tr>
+  </thead>
+  <tbody>
+  <% @audits.each do |audit| %>
+    <% if !audit.user_id.nil? %>
+      <tr>
+        <td>#<%= audit.id %></td>
+        <td><%= link_to (audit.user.username.to_s + ' / ' + audit.user.email.to_s), audits_path(:user_id, audit.user_id) %></td>
+        <td><%= audit.action %> (v<%= audit.version %>) : <%= audit.auditable_type %> (id:<%= audit.auditable_id %>)</td>
+        <td class="audit-col">
+          <%= audit.audited_changes %>
+        </td>
+
+        <td><%= audit.created_at.strftime "%Y-%m-%d %H:%M:%S" %></td>
+      </tr>
+    <% end%>
+  <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @audits, :class => 'digg_pagination', :page_links => false %>

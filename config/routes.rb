@@ -20,4 +20,6 @@ Rails.application.routes.draw do
 
   end
 
+  resources :audits
+
 end
