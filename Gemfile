@@ -14,6 +14,10 @@ gem 'omniauth', '~> 1.3.2'
 gem 'rolify'
 gem 'authority'
 
+### Audited
+gem "audited", "~> 4.6"
+
+
 ### Bootstrap
 gem 'bootstrap-sass', '3.3.6'
 gem 'font-awesome-rails'

@@ -10,33 +10,22 @@
 ![rails-intro-login](/docs/images/intro_login.png)
 
 
-## library
+- audit
 
-| name | version  | download link |
+## library - gem
+
+| name | version  | link |
 | --- | --- | --- |
 | devise | --- | --- |
 | rolify | --- | --- |
 | authority | --- | --- |
+| devise_ldap_authenticatable | --- | --- |
+| net-ldap | --- | --- |
+| omniauth | --- | --- |
+| audited | --- | https://github.com/collectiveidea/audited |
 | --- | --- | --- |
 | bootstrap-sass | --- | --- |
 | font-awesome-rails | --- | --- |
-
-## gem
-- devise
-** devise_ldap_authenticatable
-** net-ldap
-** omniauth
-- rolify
-- authority
-``` 
-gem 'devise'
-gem 'devise_ldap_authenticatable'
-gem 'net-ldap'
-gem 'omniauth', '>= 0.2.2'
-gem 'rolify'
-gem 'authority'
-```
-- nested_form
 
 ## command
 
@@ -82,13 +71,23 @@ $ user.add_role :owner, Project.find(1)
 ```
 
 - 1:N relation
-- use "nested_form"
 ```
 ## model
 $ rails g scaffold projects
 $ rails g scaffold posts  
-
 ```
+
+- authorizer
+** ProjectAuthorizer, PostAuthorizer
+** creatable_by?, updatable_by?, deletable_by?, permissionable_by?
+
+- audited
+```
+$ rails generate audited:upgrade
+$ rake db:migrate
+```
+
+- use "nested_form"
 
 
 ## library

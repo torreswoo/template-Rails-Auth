@@ -39,6 +39,8 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
+    audited (4.6.0)
+      activerecord (>= 4.0, < 5.2)
     authority (3.3.0)
       activesupport (>= 3.0.0)
     autoprefixer-rails (7.2.5)
@@ -191,6 +193,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  audited (~> 4.6)
   authority
   bootstrap-sass (= 3.3.6)
   byebug
