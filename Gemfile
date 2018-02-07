@@ -25,6 +25,11 @@ gem 'font-awesome-rails'
 ### Nested Form
 gem "nested_form"
 
+### searching
+gem 'ransack'
+### paging
+gem 'will_paginate', '>= 3.0.pre2'
+
 ##################################################################
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -9,6 +9,30 @@
                  class: 'btn btn-primary' do end %>
 </div>
 
+<!-- search & paging -->
+<%= search_form_for @q, url: projects_path, class: 'form-search' do |f| %>
+  <div class="search-container row">
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-addon">Keyname contains</span>
+        <%= f.text_field :keyname_cont, {class: 'form-control'} %>
+        <div class="input-group-btn">
+          <%= f.submit "SEARCH", :class => 'btn btn-info' %>
+        </div>
+      </div>
+    </div>
+    <div class="pagination-box">
+      <%= will_paginate @projects,
+                        :class => 'digg_pagination',
+                        :previous_label => '← Previous',
+                        :next_label => 'More →'
+      %>
+    </div>
+  </div>
+<% end %>
+<!-- END search & paging -->
+
+<!--index . the list-->
 <table class="table project-index-table">
   <colgroup>
     <col width="20%" style="background: #fafafa" />
@@ -80,7 +104,7 @@
     <% end %>
   </tbody>
 </table>
-
+<!--END index . the list-->
 <br>
 
 <%= link_to 'New Project', new_project_path %>

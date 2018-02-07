@@ -10,6 +10,43 @@
   "Post"
 ] %>
 
+<!-- search & paging -->
+<%= form_tag audits_path, :method => 'get', :class => 'form-search' do %>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="input-group">
+        <%= select_tag "auditable_type", options_for_select(auditable_types, params[:auditable_type]), { :prompt => "=== Menu Type ===", :class => "filter form-control"} %>
+        <span class="input-group-btn">
+          <%= submit_tag "Filter", :name => nil, :class => 'btn btn-info btn-for-select2' %>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 10px">
+    <div class="col-md-4">
+      <div class="input-group">
+        <%= select_tag "f_field", options_for_select([["Details", "audited_changes"]], selected: params[:f_field]), class: 'form-control' %>
+        <div class="input-group-addon input-group-addon-for-select2"></div>
+        <%= text_field_tag :search, params[:search], :class => 'form-control', :accesskey => 's' %>
+        <span class="input-group-btn">
+          <%= submit_tag "Search", :name => nil, :class => 'btn btn-info' %>
+        </span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="pagination-box">
+        <%= will_paginate @audits,
+                          :class => 'digg_pagination',
+                          :previous_label => '← Previous',
+                          :next_label => 'More →'
+        %>
+      </div>
+    </div>
+  </div>
+<% end %>
+<!-- END search & paging -->
+
+<br>
 <!-- index. the list of metrics -->
 <table class="table table-condensed table-hover table-striped">
   <colgroup>

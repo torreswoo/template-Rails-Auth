@@ -4,7 +4,15 @@ class ProjectsController < ApplicationController
   before_action :set_project_permission, only: [:permission_policy, :permission]
 
   def index
-    @projects = Project.all
+    @q = Project.ransack(params[:q])
+    ids = @q.result
+            .to_a
+            .pluck(:id)
+
+    @projects = Project
+                  .where(id: ids)
+                  .includes(:posts)
+                  .paginate(page: params[:page], per_page:10) # paging
   end
 
   def show

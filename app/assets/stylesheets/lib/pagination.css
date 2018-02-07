@@ -1,0 +1,52 @@
+/*
+ * default pagination
+ */
+.digg_pagination {
+  cursor: default;
+  /* self-clearing method: */ }
+.digg_pagination a, .digg_pagination span, .digg_pagination em {
+  background: white;
+  padding: 2px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  display: block;
+  float: left;
+  /*height: 34px;*/
+  margin-right: 1px; }
+.digg_pagination .disabled {
+  color: #999999;
+  border: 1px solid #dddddd; }
+.digg_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  background: #00bca4;
+  color: white;
+  border: 1px solid #00bca4; }
+.digg_pagination a {
+  text-decoration: none;
+  color: #00bca4;
+  border: 1px solid #00bca4; }
+.digg_pagination a:hover, .digg_pagination a:focus {
+  color: #000033;
+  border-color: #000033; }
+.digg_pagination .page_info {
+  background: #00a792;
+  color: white;
+  padding: 0.4em 0.6em;
+  width: 22em;
+  margin-bottom: 0.3em;
+  text-align: center; }
+.digg_pagination .page_info b {
+  color: #000033;
+  background: #00bca4;
+  padding: 0.1em 0.25em; }
+.digg_pagination:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+* html .digg_pagination {
+  height: 1%; }
+*:first-child + html .digg_pagination {
+  overflow: hidden; }
