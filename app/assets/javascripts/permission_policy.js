@@ -54,6 +54,12 @@ function UIPermission(){
     var item_id = '#user-access-item-' + template_data.username;
     $(item_id).on('click', 'div[name=item-btn-remove]', permissionRemoveApi);
 
+    // noty
+    new Noty({
+      type: 'success',
+      layout: 'topRight',
+      text: template_data.username + '님 권한이 추가 되었습니다.'
+    }).show().setTimeout(3500);
 
     // set defalut
     $input.find('input[name=input-username]').val(null);
@@ -67,6 +73,13 @@ function UIPermission(){
 
     for(var i=0 ; i < $items.length ; i++){
       if ($($items[i]).data('username') == input_username) {
+
+        // noty
+        new Noty({
+          type: 'error',
+          layout: 'topRight',
+          text: 'WARN: ' + input_username + '님 권한이 이미 부여되어있습니다.'
+        }).show().setTimeout(5500);
 
         return true;
       }
