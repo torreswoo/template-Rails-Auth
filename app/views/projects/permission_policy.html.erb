@@ -39,7 +39,6 @@
         <col width="15%" />
         <col width="15%" />
         <col width="15%" />
-        <col width="15%" />
       </colgroup>
       <thead>
       <tr style=" text-align: center">
@@ -65,38 +64,10 @@
       </thead>
       <tbody>
       <tr>
-        <th scope="row">View All Experiment's Results</th>
-        <th><span class="detail-small">실험 진행 상황 및 결과를 확인 할 수 있다.</span></th>
+        <th scope="row">View All Post's Results</th>
+        <th><span class="detail-small">Post를 확인 할 수 있다.</span></th>
         <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
         <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
-        <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
-      </tr>
-      <tr>
-        <th scope="row">View Variation's detail</th>
-        <th><span class="detail-small">실험 포함됨 Variation정보를 확인 할 수 있다.</span></th>
-        <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
-        <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
-        <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
-      </tr>
-      <tr>
-        <th scope="row">Create New Experiment</th>
-        <th><span class="detail-small"><span>새로운 실험을 생성</span>할 수 있다.</span></th>
-        <td></td>
-        <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
-        <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
-      </tr>
-      <tr>
-        <th scope="row">Edit Own Experiment</th>
-        <th><span class="detail-small"><span class="detail-strong">자신이 만든 실험을 수정(start/stop/winner)</span>할 수 있다.</span></th>
-        <td></td>
-        <td></td>
-        <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
-      </tr>
-      <tr>
-        <th scope="row">Edit All Experiment</th>
-        <th><span class="detail-small"><span class="detail-strong">모든 실험의 정보를 수정(start/stop/winner)</span>할 수 있다.</span></th>
-        <td></td>
-        <td></td>
         <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
       </tr>
       </tbody>
@@ -126,7 +97,6 @@
 
         <select name="input-role" class="input-role">
           <option value="ROLE_NULL" selected>.. choose role</option>
-          <!--<option value="ROLE_ADMIN"> Admin</option>-->
           <option value="ROLE_OWNER"> Owner</option>
           <option value="ROLE_PLANNER"> Planner</option>
         </select>
@@ -257,9 +227,9 @@
 
 <!--template-->
 <script id="template-user-access-item" type="text/html">
-  <div id="user-access-item-{{username}}" name="user-access-item" class="user-access-item" data-username="{{username}}" data-role="{{role}}" data-user-name="{{user_name}}" data-user-department="{{user_department}}">
+  <div id="user-access-item-{{username}}" name="user-access-item" class="user-access-item" data-username="{{username}}" data-role="{{role}}" data-email="{{email}}">
 
-    <div class="item-field-name"> {{user_name}} / {{user_department}}</div>
+    <div class="item-field-name"> {{username}} / {{email}}</div>
 
     <div class="item-field-role">
       <i class="fa {{icon}}" aria-hidden="true"></i>
@@ -288,5 +258,6 @@
 
 <!--js-->
 <script>
-
+  var permission = new UIPermission();
+  permission.init();
 </script>
