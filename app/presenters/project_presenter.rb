@@ -16,7 +16,7 @@ class ProjectPresenter < SimpleDelegator
 
   def audit_modified_fmt
     modified_time = time_ago_in_words(model.updated_at)
-    modified_user = model.audits.last.nil? ? '-' : ' by ' + User.find(model.audits.last.user_id).username
+    modified_user = model.audits.last.nil? ? '' : ' by ' + User.find(model.audits.last.user_id).username
 
     modified_detail = modified_time + modified_user
   end
