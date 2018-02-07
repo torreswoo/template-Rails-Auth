@@ -34,12 +34,8 @@
       </div>
     </div>
     <div class="col-md-6">
-      <div class="pagination-box">
-        <%= will_paginate @audits,
-                          :class => 'digg_pagination',
-                          :previous_label => '← Previous',
-                          :next_label => 'More →'
-        %>
+      <div class="col-md-6">
+        <%= will_paginate @audits, :class => 'digg_pagination', :page_links => false %>
       </div>
     </div>
   </div>

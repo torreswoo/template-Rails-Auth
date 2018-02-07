@@ -17,7 +17,6 @@ gem 'authority'
 ### Audited
 gem "audited", "~> 4.6"
 
-
 ### Bootstrap
 gem 'bootstrap-sass', '3.3.6'
 gem 'font-awesome-rails'

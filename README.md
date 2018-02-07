@@ -6,29 +6,30 @@
 - Sign up
 - Role Management
 - Authority
-
 ![rails-intro-login](/docs/images/intro_login.png)
 
-
-- audit
+- Audit Log
+- Searching & Paging
 
 ## library - gem
 
 | name | version  | link |
 | --- | --- | --- |
-| devise | --- | --- |
-| rolify | --- | --- |
-| authority | --- | --- |
+| devise | --- | https://github.com/plataformatec/devise |
+| rolify | --- | https://github.com/RolifyCommunity/rolify |
+| authority | --- | https://github.com/nathanl/authority |
 | devise_ldap_authenticatable | --- | --- |
 | net-ldap | --- | --- |
 | omniauth | --- | --- |
 | audited | --- | https://github.com/collectiveidea/audited |
 | --- | --- | --- |
+| ransack | --- | https://github.com/activerecord-hackery/ransack |
+| will_paginate | --- | https://github.com/mislav/will_paginate |
+| --- | --- | --- |
 | bootstrap-sass | --- | --- |
 | font-awesome-rails | --- | --- |
 
-## command
-
+## How to use gem simply
 - set basic project
 ```
 $ rails new template-Rails-Auth
@@ -75,22 +76,62 @@ $ user.add_role :owner, Project.find(1)
 ## model
 $ rails g scaffold projects
 $ rails g scaffold posts  
+
+## keyword
+belongs_to
+has_many
 ```
 
 - authorizer
+```
+config/initializers/authority.rb
 ** ProjectAuthorizer, PostAuthorizer
 ** creatable_by?, updatable_by?, deletable_by?, permissionable_by?
+```
 
 - audited
 ```
+## Gemfile
+gem "audited", "~> 4.6"
+
+## command
 $ rails generate audited:upgrade
 $ rake db:migrate
+
+## keyword
+audited
+has_associated_audits
+```
+
+- Searching
+```
+## Gemfile
+gem 'ransack'
+config/initializers/ransack.rb
+
+## view helper
+<%= search_form_for @q, url: , class:  do |f| %>
+
+## controller
+@q = Project.ransack(params[:q])
+```
+
+- Paging
+```
+## Gemfile
+gem 'will_paginate'
+
+## view helper
+<%= will_paginate @projects, :class , :previous_label, :next_label %>
+
+## keyword
+lib/pagination.css
 ```
 
 - use "nested_form"
 
 
-## library
+## UI library
 - Bootstrap
 ```
 Gemfile
