@@ -34,4 +34,8 @@ module ApplicationHelper
     p.join.html_safe
   end
 
+  def resource_role(resource_type, resource_id)
+    Role.find_by(resource_type:resource_type, resource_id:resource_id)
+  end
+
 end
