@@ -19,16 +19,10 @@
 
 
 <div class="access-component">
-
-  <div>
-    <h3>Public Access</h3>
-    <p>모든 사용자가 프로젝트에 있는 모든 실험 정보를 볼 수 있습니다.</p>
-  </div>
-
   <div>
     <h3>User Access - User Role</h3>
     <p>
-      해당 프로젝트에서 실험의 생성, 수정을 Role을 부여함으로써, 사용자 별로 통제할 수 있습니다<br>
+      해당 Project에서 Post의 생성, 수정을 Role을 부여함으로써, 사용자 별로 통제할 수 있습니다<br>
       User Role - Guest / Owner / Admin
     </p>
 
@@ -151,35 +145,24 @@
       <!--list component - item list -->
       <div id="user-access-list" class="user-access-list">
 
-        <% if !Role.find_by(resource_type:'Project', resource_id:@project.id).nil? %>
+        <% if !resource_role('Project', @project.id).nil? %>
           <%
-            # users_admin = !Role.find_by(name:'admin').nil? ? Role.find_by(name:'admin').users : []
-            users_owner = !Role.find_by(resource_type:'Project', resource_id:@project.id, name:'owner').nil? ? Role.find_by(resource_type:'Project', resource_id:@project.id, name:'owner').users : []
-
+            users_owner = !resource_role('Project', @project.id).nil? ? resource_role('Project', @project.id).users : []
 
             users = ( users_owner ).uniq
             if !users.nil?
               users.each do | user |
-                role = nil
-                role = user.has_role_project_owner?(@project) ? 'Owner' : role
-                role = user.has_role_admin? ? 'Admin' : role
-
-                icon = case role
-                  when 'Admin' then 'fa-users'
-                  when 'Owner' then 'fa-user-circle'
-                  else ''
-                 end
-%>
+                role, icon = user_permission_role(user)
+          %>
               <!--item-->
               <div id="user-access-item-<%= user.username %>"
                    name="user-access-item"
                    class="user-access-item <%= (role == 'Admin') ? 'user-access-admin' :'' %>"
                    data-role="<%= role %>"
                    data-username="<%= user.username %>"
-                   data-user-name="<%= user.name %>"
-                   data-user-department="<%= user.department %>">
+                   data-email="<%= user.email %>">
 
-                <div class="item-field-name"> <%= user.name %> / <%= user.department %></div>
+                <div class="item-field-name"> <%= user.username %> / <%= user.email %></div>
 
                 <div class="item-field-role">
                   <i class="fa <%= icon %>" aria-hidden="true"></i>
@@ -189,6 +172,9 @@
                 <div class="item-field-permission">
                   <div class="item-field-permission-field">
                     <%= (%w{Admin }.include? role) ? '<i class="fa fa-check-circle-o" aria-hidden="true"></i>'.html_safe: ''%>
+                  </div>
+                  <div class="item-field-permission-field">
+                    <%= (%w{Admin Owner }.include? role) ? '<i class="fa fa-check-circle-o" aria-hidden="true"></i>'.html_safe: ''%>
                   </div>
                   <div class="item-field-permission-field">
                     <%= (%w{Admin Owner }.include? role) ? '<i class="fa fa-check-circle-o" aria-hidden="true"></i>'.html_safe: ''%>

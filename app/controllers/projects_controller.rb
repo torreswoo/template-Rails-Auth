@@ -74,12 +74,43 @@ class ProjectsController < ApplicationController
     end
   end
 
+  # permission UI page
   def permission_policy
-
     authorize_action_for @project
     @users = User.at_who session[:username]
+  end
+
+  # permission POST API
+  def permission
+    authorize_action_for @project
+
+    ActiveRecord::Base.transaction do
+
+      username = params[:username]
+      project_id = params[:project_id]
+      action = params[:control]
+      role = case params[:role]
+               when 'ROLE_ADMIN';    'admin'
+               when 'ROLE_OWNER';    'owner'
+               else 'none'
+             end
+
+      # get user
+      user = User.find_by(username:username)
+
+      # set role - add / remove
+      case action
+        when 'ADD'
+          user.add_role(role, Project.find(project_id))
+        when 'REMOVE'
+          user.remove_role(role, Project.find(project_id))
+        else nil
+      end
+
+    end
 
   end
+
 
   private
 
@@ -93,5 +124,9 @@ class ProjectsController < ApplicationController
 
     def project_params
       params.require(:project).permit(:ptype, :keyname)
+    end
+
+    def permission_params
+      params.permit(:username, :role, :control)
     end
 end

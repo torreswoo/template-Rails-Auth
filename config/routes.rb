@@ -22,4 +22,8 @@ Rails.application.routes.draw do
 
   resources :audits
 
+  # API
+  post 'projects/permission' => 'projects#permission'
+
+
 end
