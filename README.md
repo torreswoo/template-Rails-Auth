@@ -1,18 +1,24 @@
-# README
-
+# Torres Template Project - Ruby On Rails
+This project is based on Ruby On Rails.
+- Login : LDAP / DB Authenticate & Sign up
+- Role Management & Authority
+- Audit Log
+- Searching & Paging - index & table
 
 ## feature
-- Login : LDAP / DB Authenticate
-- Sign up
-- Role Management
-- Authority
+### Login : LDAP / DB Authenticate & Sign up
 ![rails-intro-login](/docs/images/intro_login.png)
 
-- Audit Log
-- Searching & Paging
+### Role Management & Authority
+![rails-Role-Management](/docs/images/permission_policy.png)
+
+### Audit Log
+![rails-AuditLog](/docs/images/audit_log_modal.png)
+![rails-AuditLog](/docs/images/audit_log_page.png)
+
+### Searching & Paging
 
 ## library - gem
-
 | name | version  | link |
 | --- | --- | --- |
 | devise | --- | https://github.com/plataformatec/devise |

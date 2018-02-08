@@ -36,7 +36,7 @@ function UIPermission(){
     var $select2_input = $('#select2-input-username-container')[0].innerText.split('/');
     var template_data = {
       username:        $select2_input[0].trim(),
-      email:        $select2_input[1].trim(),
+      email:        $select2_input[2].trim(),
 
       role: (data.role == 'ROLE_ADMIN') ? 'Admin' : ((data.role == 'ROLE_OWNER') ? 'Owner' : 'Planner'),
       icon: (data.role == 'ROLE_ADMIN') ? 'fa-users' : ((data.role == 'ROLE_OWNER') ? 'fa-user-circle' : 'fa-user-o'),
